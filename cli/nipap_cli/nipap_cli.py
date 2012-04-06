@@ -238,6 +238,12 @@ def list_prefix(arg, opts):
         if p.display == False:
             continue
 
+        if p.node is None:
+            p.node = "-"
+        if p.order_id is None:
+            p.order_id = "-"
+        if p.description is None:
+            p.description = ""
         try:
             print "%-30s%-3s%-20s%-15s%-40s" % (
                 "".join("  " for i in range(p.indent)) + p.display_prefix,
